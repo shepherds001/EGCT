@@ -208,7 +208,7 @@ class ConvLayer(nn.Module):
         if self.type == 'conv1d':
             x = self.layer(x)
             x = x.max(dim=-1, keepdim=False)[0] # (bs, num_dims)
-        elif self.type == 'adapt':
+        elif self.type == 'GCT':
             x = self.layer(points, x, idx)
         elif self.type == 'GConv':
             x = self.layer(x, idx)
